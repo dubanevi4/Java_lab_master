@@ -7,9 +7,9 @@ public class Excercise_4 {
         try (Scanner sc = new Scanner (System.in)){
             int m = sc.nextInt();
             int n = sc.nextInt();
-            while (n != m) {
+            while (n >= m) {
                 if (n % 2 == 0){
-                    System.out.println(n);
+                    System.out.print(n + " ");
                     n--;
                 } else {
                     n--;
