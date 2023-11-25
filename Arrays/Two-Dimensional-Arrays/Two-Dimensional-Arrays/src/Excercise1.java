@@ -3,7 +3,10 @@ import java.util.Arrays;
 public class Excercise1 {
     public static void main(String[] args){
     int[] a = {1, 0, 0, 3, 1};
-    System.out.println(Arrays.toString(Solution.create(a)));
+    int[][] b = Solution.create(a);
+    for (int i = 0; i <= a.length-1; i++) {
+        System.out.println(Arrays.toString(b[i]));
+        }
     }
 }
 
@@ -18,8 +21,14 @@ class Solution {
         //put your code here
         int k = a.length;
         int[][] b = new int[k][4];
-        for (int i = 0; i <= 4; i++) {
-            for (int j = 0; j < b[i].length; j++) ;
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (j == a[i]) {
+                    b[i][j] = 1;
+                } else {
+                    b[i][j] = 0;
+                }
+            }
         }
         return b;
     }
