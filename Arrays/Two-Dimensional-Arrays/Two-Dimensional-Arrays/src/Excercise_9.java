@@ -1,0 +1,29 @@
+import java.util.Arrays;
+
+public class Excercise_9 {
+    public static void main(String[] args){
+    int[] a = {3,2,4,0,1};
+    int[][] b = Solution_9.create(a);
+    System.out.println(Arrays.deepToString(b));
+    }
+}
+
+class Solution_9 {
+
+    /**
+     * @param a the given array, containing non-negative numbers
+     * @return the 2-dimensional array b where for each i: a[i] is the length of b[i] and b[i][j] = j
+     */
+    public static int[][] create(int[] a) {
+        //put your code here
+        int[][] b = new int [a.length][];
+        for (int i = 0; i < a.length; i++){
+            b[i] = new int[a[i]];
+            for (int j = 0; j < b[i].length; j++) {
+                b[i][j] = j;
+            }
+        }
+        return b;
+    }
+}
+

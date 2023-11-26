@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Excercise_6 {
     public static void main(String[] args){
 
-        int[][] a = {{7,-1,8},{1,-1,-1},{2,-8,5},{3,7,-1}};
+        int[][] a = {{7,-1,8},{1,-1,-1},{2,-8,5}};
         //int[][] a = {{1,3},{0,2},{10,5}};
         //int[][] a = {{1}};
         int[] b = Solution_6.straighten(a);
@@ -29,10 +29,12 @@ class Solution_6 {
             int[] b = new int [a.length * a[0].length];
             int counter = 0;
             for (int i = 0; i < a.length; i++) {
-                for (int j = 0; j < a[i].length; j++) {
-                    if (i % 2 == 0){
+                if (i % 2 != 0) {
+                    for (int j = 0; j < a[i].length; j++) {
                         b[counter++] = a[i][j];
-                    } else {
+                    }
+                } else {
+                    for (int j = a[i].length-1; j >= 0; j--){
                         b[counter++] = a[i][j];
                     }
                 }
