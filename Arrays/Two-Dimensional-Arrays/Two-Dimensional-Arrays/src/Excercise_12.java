@@ -16,39 +16,14 @@ class Solution_12 {
      */
     public static int[][] create(int n) {
         //put your code here
-        int[][] a = new int [n][n];
-        for (int i = 0; i < n / 2; i++) {
-            for (int j = 0; j < n / 2; j++){
-                if (i <= j){
-                    a[i][j] = 1;
-                } else {
-                    a[i][j] = 0;
-                }
-            }
-            for (int j = n / 2; j < n; j++){
-                if (i >= j - n/2){
-                    a[i+n/2][j] = 1;
-                } else {
-                    a[i+n/2][j] =0;
-                }
+        int[][] b = new int[n][n];
+        for (int i = 0, k = 0; i < n; i++, k++) {
+            int min = Math.min(k, n - k);
+            int max = Math.max(k, n - k);
+            for (int j = min; j < max; j++) {
+                b[i][j] = 1;
             }
         }
-        for (int i = n / 2; i < n; i++) {
-            for (int j = 0; j < n / 2; j++){
-                if (i-n/2 <= j){
-                    a[i][j] = 1;
-                } else {
-                    a[i][j] = 0;
-                }
-            }
-            for (int j = n / 2; j < n; j++){
-                if (i >= j){
-                    a[i][j] = 1;
-                } else {
-                    a[i/2][j] =0;
-                }
-            }
-        }
-        return a;
+        return b;
     }
 }

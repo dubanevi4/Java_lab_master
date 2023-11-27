@@ -3,9 +3,11 @@ import java.util.Arrays;
 public class Excercise_6 {
     public static void main(String[] args){
 
-        int[][] a = {{7,-1,8},{1,-1,-1},{2,-8,5}};
+        //int[][] a = {{7,-1,8},{1,-1,-1},{2,-8,5}};
         //int[][] a = {{1,3},{0,2},{10,5}};
         //int[][] a = {{1}};
+        //int[][] a = {{2,3},{0,9}};
+        int[][] a = {{12,0,4,-5,1}};
         int[] b = Solution_6.straighten(a);
         System.out.println(Arrays.toString(b));
     }
@@ -22,10 +24,6 @@ class Solution_6 {
      */
     public static int[] straighten(int[][] a) {
         //put your code here
-        if (a.length == 1){
-            int[] b = a[0];
-            return b;
-        } else {
             int[] b = new int [a.length * a[0].length];
             int counter = 0;
             for (int i = 0; i < a.length; i++) {
@@ -40,6 +38,5 @@ class Solution_6 {
                 }
             }
             return b;
-        }
     }
 }
