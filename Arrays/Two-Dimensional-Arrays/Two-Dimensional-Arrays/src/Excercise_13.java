@@ -16,10 +16,23 @@ class Solution_13 {
      */
     public static int[][] create(int n) {
         //put your code here
-        int[][] a = new int [n][n];
-        for (int i = 0; i < n; i++){
-
+        int[][] b = new int[n][n];
+        for (int[] row: b)
+            Arrays.fill(row, 1);
+        for (int i = 0, k = 1; i < n/2; i++, k++) {
+            int min = Math.min(k, n - k);
+            int max = Math.max(k, n - k);
+            for (int j = min; j < max; j++) {
+                b[i][j] = 0;
+            }
         }
-        return a;
+        for (int i = n/2+1, k = n/2+1; i < n; i++, k++) {
+            int min = Math.min(k, n - k);
+            int max = Math.max(k, n - k);
+            for (int j = min; j < max; j++) {
+                b[i][j] = 0;
+            }
+        }
+        return b;
     }
 }
