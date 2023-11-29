@@ -16,12 +16,17 @@ class Solution_23 {
      */
     public static void sortedByInitial(int[][] a) {
         //put your code here
-        for (int i = 0; i < a.length-1; i++){
-            if (a[i][0] > a[i+1][0]){
-                int[] swapArray = a[i+1];
-                a[i+1] = a[i];
-                a[i] = swapArray;
+        int n = a.length;
+        for (int i = 0; i < n-1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (a[j][0] < a[minIdx][0]) {
+                    minIdx = j;
+                }
             }
+            int[] temp = a[minIdx];
+            a[minIdx] = a[i];
+            a[i] = temp;
         }
     }
 }
