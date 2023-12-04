@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Sorting_Exc2 {
     public static void main(String[] args){
         int[] a = {4, 8, 6, 2, 5};
-        int k = 1;
+        int k = 2;
         Solution_2.sort(a,k);
         System.out.println(Arrays.toString(a));
     }
@@ -24,20 +24,21 @@ class Solution_2 {
     public static void sort(int[] a, int k) {
         //put your code here
         int n = a.length;
-        for (int i = 1; i < n; ++i) {
-            int key = a[i];
-            int j = i - 1;
 
-            /* Move elements of arr[0..i-1], that are
-               greater than key, to one position ahead
-               of their current position */
-            for (j >= 0 && a[j] > key; k < n; k++) {
-                a[j + 1] = a[j];
-                j = j - 1;
-            }
-            a[j + 1] = key;
+        // One by one move boundary of unsorted subarray
+        for (int i = 0; i < k; i++)
+        {
+            // Find the minimum element in unsorted array
+            int min_idx = i;
+            for (int j = i+1; j < k + 1; j++)
+                if (a[j] < a[min_idx])
+                    min_idx = j;
+
+            // Swap the found minimum element with the first
+            // element
+            int temp = a[min_idx];
+            a[min_idx] = a[i];
+            a[i] = temp;
         }
     }
 }
-
-

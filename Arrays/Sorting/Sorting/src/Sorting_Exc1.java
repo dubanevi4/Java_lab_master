@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class Sorting_Exc1 {
     public static void main(String[] args){
         int[] a = {4, 8, 6, 2, 5};
-        int k = 1;
+        int k = 4;
         Solution.sort(a,k);
         System.out.println(Arrays.toString(a));
     }
