@@ -1,16 +1,15 @@
 import java.util.Arrays;
 
-public class Sorting_Exc4 {
+public class Sorting_Exc4_temp {
     public static void main(String[] args) {
         char[] letters = {'a','a','a'};
         int[] numbers = {3,2,1};
-        int k = 6;
-        Solution_4.sort(letters, numbers);
+        Solution_4_temp.sort(letters, numbers);
         System.out.println(Arrays.toString(letters));
         System.out.println(Arrays.toString(numbers));
     }
 }
-class Solution_4 {
+class Solution_4_temp {
 
     /**
      * method sorts two non-empty arrays of equal length parallelly by ascending order
@@ -32,6 +31,11 @@ class Solution_4 {
                 if (letters[j] < letters[pos]) {
                     pos = j;
                 }
+                else if (letters[j] == letters[pos]) {
+                    if (numbers[j] < numbers[pos]) {
+                        pos = j;
+                    }
+                }
             }
             tempLetter = letters[pos];
             tempNumber = numbers[pos];
@@ -42,4 +46,3 @@ class Solution_4 {
         }
     }
 }
-
