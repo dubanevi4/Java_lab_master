@@ -32,57 +32,26 @@ public class Line {
 
     //returns if this line is parallel to the line given by the method argument.
     public boolean isParallel(Line line) {
-        double x1 = 0;
-        double x2 = 10;
-        double y1 = this.k * x1 + this.b;
-        double y2 = this.k * x2 + this.b;
-        double y3 = line.getK()*x1 + line.getB();
-        double y4 = line.getK()*x2 + line.getB();
-        if (y1 - y3 == y2 - y4){
-            return true;
-        } else {
-            return false;
-        }
+        return this.k == line.getK();
     }
 
     //returns if this line is perpendicular to the line given by the method argument.
     public boolean isPerpendicular(Line line){
-        double x1 = 0;
-        double x2 = 10;
-        double y1 = this.k * x1 + this.b;
-        double y2 = this.k * x2 + this.b;
-        double y3 = line.getK()*x1 + line.getB();
-        double y4 = line.getK()*x2 + line.getB();
-
-        double m1 = (y2 - y1) / (x2 - x1);
-        double m2 = (y4 - y3) / (x2 - x1);
-
-        if (m1 * m2 == -1){
-            return true;
-        } else {
-            return false;
-        }
+        return this.k == -1 / line.getK();
     }
 
     //returns if this line is located over the line given by the method argument.
-//    public boolean isOver(Line line){
-//        double x1 = 0;
-//        double x2 = 10;
-//        double y1 = this.k * x1 + this.b;
-//        double y2 = this.k * x2 + this.b;
-//        double y3 = line.getK()*x1 + line.getB();
-//        double y4 = line.getK()*x2 + line.getB();
-//
-//
-//    }
-//
-//    //returns an angle of slope of this line in radians (it is equaled to Math.atan(k)).
-//    public angleOfSlope(){
-//
-//    }
-//
-//    //returns an abscissa of crossing this line with the X-axis.
-//    public abscissa0(){
-//
-//    }
+    public boolean isOver(Line line){
+        return this.isParallel(line) && this.b > line.getB();
+    }
+
+    //returns an angle of slope of this line in radians (it is equaled to Math.atan(k)).
+    public double angleOfSlope(){
+        return Math.atan(this.k);
+    }
+
+    //returns an abscissa of crossing this line with the X-axis.
+    public double abscissa0(){
+        return -(this.b / this.k);
+    }
 }
