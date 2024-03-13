@@ -58,13 +58,13 @@ class Rational {
         //put your code here
 
         if (q == 1){
-            return String.format("%d",p);
+            return String.format("%d", p);
         }
         if (Math.abs(p) < q){
-            return String.format("%d/%d",p,q);
+            return String.format("%d/%d", p, q);
         }
 
-        return String.format("%d %d/%d",p/q,Math.abs(p%q),q);
+        return String.format("%d %d/%d", p / q, Math.abs(p % q), q);
     }
 
 }
@@ -79,8 +79,8 @@ class Solution {
             char op = sc.next().charAt(0);
 //        System.out.println(new Rational(12,56).div(new Rational(10,28)));
             //put your code here
-            Rational r1 = new Rational(p1,q1);
-            Rational r2 = new Rational(p2,q2);
+            Rational r1 = new Rational(p1, q1);
+            Rational r2 = new Rational(p2, q2);
             r1 = switch (op) {
                 case '+' -> r1.add(r2);
                 case '-' -> r1.sub(r2);
