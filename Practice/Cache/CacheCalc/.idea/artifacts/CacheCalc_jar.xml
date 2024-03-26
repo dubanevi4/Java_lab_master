@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CacheCalc:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CacheCalc_jar</output-path>
+    <root id="archive" name="CacheCalc.jar">
+      <element id="module-output" name="CacheCalc" />
+    </root>
+  </artifact>
+</component>
