@@ -9,7 +9,6 @@ class Main {
 
     public static void main(String[] args) {
         Solution.main(args);
-
         //some hidden verification code here
 
     }
