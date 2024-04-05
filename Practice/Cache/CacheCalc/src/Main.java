@@ -57,7 +57,7 @@ public class Main {
 
 
             System.out.println("------------------------------------------------------------------");
-            System.out.println("| k=1               | k=4                 | k=num of cache lines |");
+            System.out.println("| k=1               | k="+ (int)k +"                 | k=num of cache lines |");
             System.out.println("| (direct-mapped)   | (k-way associative) | (fully associative)  |");
             System.out.println("|-------------------|---------------------|----------------------|");
             System.out.println("| TAG | SET | OFFSET| TAG | SET | OFFSET  | TAG | SET | OFFSET   |");
