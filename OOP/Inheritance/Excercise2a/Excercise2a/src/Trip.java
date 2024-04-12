@@ -13,13 +13,13 @@ class Trip {
     }
 
     public final  int totalCost(){
-        return this.totalCostParam(DAILY_RATE);
+        return this.getRate() * this.numberOfDays + this.fare;
     }
 
     //add protected method and use it the totalCost()
-    protected int totalCostParam(int dailyRate) {
+    protected int getRate() {
         //write the correct expression instead of 0
-        return dailyRate * numberOfDays + fare;
+        return Trip.DAILY_RATE;
     }
 }
 
@@ -35,8 +35,8 @@ class HomeTrip extends Trip {
 
     //    override the protected method
     @Override
-    protected int totalCostParam(int dailyRate){
-        return super.totalCostParam(DAILY_RATE);
+    protected int getRate(){
+        return HomeTrip.DAILY_RATE;
     }
 
 }
@@ -52,8 +52,8 @@ class OneDayTrip extends Trip {
 
     //    override the protected method
     @Override
-    protected int totalCostParam(int dailyRate){
-        return super.totalCostParam(DAILY_RATE);
+    protected int getRate(){
+        return OneDayTrip.DAILY_RATE;
     }
 }
 
