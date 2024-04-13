@@ -11,15 +11,15 @@ class Main {
             String type = sc.next();
             switch (type) {
                 case "Floor":
-                    Floor floor = new Floor(sc.nextDouble(),sc.nextDouble());
+                    Surface floor = new Floor(sc.nextDouble(),sc.nextDouble());
                     System.out.printf("%.3f", floor.area());
                     break;
                 case "Tower":
-                    Tower tower = new Tower(sc.nextDouble(), sc.nextDouble());
+                    Surface tower = new Tower(sc.nextDouble(), sc.nextDouble());
                     System.out.printf("%.3f", tower.area());
                     break;
                 case "Sphere":
-                    Sphere sphere = new Sphere(sc.nextDouble());
+                    Surface sphere = new Sphere(sc.nextDouble());
                     System.out.printf("%.3f", sphere.area());
                     break;
                 default:
