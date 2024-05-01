@@ -3,7 +3,11 @@ class Thermometer {
 
     public Thermometer(String initTemperature) {
         // TODO: Delete line below and write your own solution.
-        throw new UnsupportedOperationException();
+        try {
+            this.temperature = Integer.parseInt(initTemperature);
+        } catch (NumberFormatException e){
+            throw new NumberFormatException(initTemperature + " is not an integer");
+        }
     }
 
     @Override
@@ -16,7 +20,12 @@ class Demo {
     public static void main(String[] args) {
         for (String arg : args) {
             // TODO: Delete line below and write your own solution.
-            System.out.println("Not implemented");
+            try {
+                Thermometer thermometer = new Thermometer(arg);
+                System.out.println(thermometer);
+            } catch (NumberFormatException e){
+                System.out.println(e.getMessage());
+            }
         }
     }
 }
