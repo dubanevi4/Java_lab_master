@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0edd62a-5e4d-4106-9801-2b9fa1be7b7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../DataStructure/SinglyLinkedList/SingleLinkedList-task" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataStructure/SinglyLinkedList/SingleLinkedList-task" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Practice/OOP_Pair/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Practice/OOP_Pair/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Practice/OOP_Pair/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Practice/OOP_Pair/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Practice/OOP_Pair/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Practice/OOP_Pair/Test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Generics/Excercises1-3/GerericsExcercises/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Generics/Excercises1-3/GerericsExcercises/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/InteliJ_workspace/Java_lab_master/Practice",
+    "last_opened_file_path": "D:/InteliJ_workspace/Java_lab_master/Collections/Examples/OOP-Pair",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,18 +51,6 @@
       <recent name="D:\InteliJ_workspace\Java_lab_master\Practice" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,6 +61,7 @@
       <updated>1710326946400</updated>
       <workItem from="1710326947377" duration="627000" />
       <workItem from="1710327701677" duration="36000" />
+      <workItem from="1718107092792" duration="3432000" />
     </task>
     <servers />
   </component>
