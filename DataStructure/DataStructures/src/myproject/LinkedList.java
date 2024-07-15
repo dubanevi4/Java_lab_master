@@ -1,4 +1,7 @@
 package myproject;
+
+import java.util.NoSuchElementException;
+
 public class LinkedList {
     private class Node {
         private int value;
@@ -37,6 +40,10 @@ public class LinkedList {
         return null;
     }
 
+    public int getSize(){
+        return size;
+    }
+
     //addFirst O(1)
     public void addFirst(int value) {
         if (isEmpty()) {
@@ -64,7 +71,15 @@ public class LinkedList {
 
     //deleteFirst O(1)
     public void deleteFirst(){
-        first = first.nextNode;
+        if (isEmpty()){
+            throw new NoSuchElementException();
+        }
+        if (first == last){
+            first = last = null;
+        }
+        var second = first.nextNode;
+        first.nextNode = null;
+        first = second;
         size--;
     }
 
@@ -126,6 +141,7 @@ class Main1 {
         System.out.println(list);
         System.out.println(list.contains(20));
         System.out.println(list.indexOf(40));
+        System.out.println(list.getSize());
     }
 }
 
