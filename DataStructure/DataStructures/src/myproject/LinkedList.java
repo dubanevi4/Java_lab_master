@@ -1,5 +1,6 @@
 package myproject;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class LinkedList {
@@ -9,14 +10,6 @@ public class LinkedList {
 
         public Node(int value) {
             this.value = value;
-        }
-
-        public Node getNextNode() {
-            return nextNode;
-        }
-
-        public void setNextNode(Node node) {
-            nextNode = node;
         }
     }
 
@@ -28,14 +21,14 @@ public class LinkedList {
         return first == null;
     }
 
-    //getPrevioud for deleting last node O(n)
+    //getPrevious; complexity O(n)
     public Node getPrevious(Node node){
-        var tempNode = first;
-        for (int i = 0; i < size; i++){
-            tempNode = tempNode.nextNode;
-            if (tempNode.nextNode == node){
-                return tempNode;
+        var current = first;
+        while (current != null){
+            if (current.nextNode == node){
+                return current;
             }
+            current = current.nextNode;
         }
         return null;
     }
@@ -44,87 +37,83 @@ public class LinkedList {
         return size;
     }
 
-    //addFirst O(1)
+    //addFirst; complexity  O(1)
     public void addFirst(int value) {
+        var node = new Node(value);
+
         if (isEmpty()) {
-            first = last = new Node(value);
-            size++;
+            first = last = node;
         } else {
-            var tempNode = first;
-            first = new Node(value);
-            first.nextNode = tempNode;
-            size++;
+            node.nextNode = first;
+            first = node;
         }
+        size++;
     }
 
-    //addLast O(1)
+    //addLast; complexity O(1)
     public void addLast(int value) {
+        var node = new Node(value);
         if (isEmpty()) {
-            first = last = new Node(value);
-            size++;
+            first = last = node;
         } else {
-            var tempNode = last;
-            last = tempNode.nextNode = new Node(value);
-            size++;
+            last.nextNode = node;
+            last = node;
         }
+        size++;
     }
 
-    //deleteFirst O(1)
+    //deleteFirst; complexity O(1)
     public void deleteFirst(){
         if (isEmpty()){
             throw new NoSuchElementException();
         }
         if (first == last){
             first = last = null;
+        } else {
+            var second = first.nextNode;
+            first.nextNode = null;
+            first = second;
         }
-        var second = first.nextNode;
-        first.nextNode = null;
-        first = second;
         size--;
     }
 
-    //deleteLast O(n)
+    //deleteLast; complexity O(n) because of getPrevious method.
     public void deleteLast(){
         var tempNode = getPrevious(last);
         tempNode.nextNode = null;
         size--;
     }
 
-    //contains O(n)
+    //contains; complexity O(n) because of indexOf
     public boolean contains(int value){
-        var tempNode = first;
-        for (int i = 0; i < size; i++){
-            if (tempNode.value == value){
-                return true;
-            }
-            tempNode = tempNode.nextNode;
-        }
-        return false;
+        return indexOf(value) != -1;
     }
 
 
-    //indexOf O(n)
+    //indexOf; complexity O(n)
     public int indexOf(int value){
-        var tempNode = first;
-        for (int i = 0; i < size; i++){
-            if (tempNode.value == value){
-                return i;
+        var current = first;
+        int index = 0;
+        while (current != null){
+            if (current.value == value){
+                return index;
             }
-            tempNode = tempNode.nextNode;
+            index++;
+            current= current.nextNode;
         }
         return -1;
     }
 
-    //toString O(n)
-    public String toString(){
-       StringBuilder sb = new StringBuilder("[");
-        var tempNode = first;
-        for (int i = 0; i < size; i++){
-            sb.append(tempNode.value + ",");
-            tempNode = tempNode.nextNode;
+    //toArray; complexity O(n)
+    public int[] toArray(){
+       int[] array = new int[size];
+       var node = first;
+       int index = 0;
+        while (node != null){
+            array[index++] = node.value;
+            node = node.nextNode;
         }
-        sb.replace(sb.lastIndexOf(","),sb.lastIndexOf(",") + 1,"]");
-        return sb.toString();
+        return array;
     }
 
 }
@@ -138,7 +127,7 @@ class Main1 {
         list.addLast(50);
         list.deleteFirst();
         list.deleteLast();
-        System.out.println(list);
+        System.out.println(Arrays.toString(list.toArray()));
         System.out.println(list.contains(20));
         System.out.println(list.indexOf(40));
         System.out.println(list.getSize());
