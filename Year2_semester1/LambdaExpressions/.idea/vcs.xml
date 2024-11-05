@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/IntArrayReducer/int-array-reducer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Percentage-formatter/percentage-formatter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Throwing-Function/throwing-function" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Tri-Function/tri-function" vcs="Git" />
+  </component>
+</project>
